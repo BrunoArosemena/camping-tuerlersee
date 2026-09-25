@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    <p class="eyebrow"><a href="/aktivitaeten/">← Alle Aktivitäten</a></p>
+    <h1>{{ title }}</h1>
+    <p class="page-hero__meta">
+      {{ date | dateDeLong }}{% if time %} · {{ time }}{% endif %}
+      {% if location %}<br>{{ location }}{% endif %}
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+
+    {% if date | isFuture %}
+      {% if registration %}
+      <div class="card card--form" id="anmeldung">
+        <h2>Anmeldung</h2>
+        <p>Meld dich hier direkt für «{{ title }}» an.</p>
+        <form name="aktivitaet-anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+          <input type="hidden" name="form-name" value="aktivitaet-anmeldung">
+          <input type="hidden" name="aktivitaet" value="{{ title }}">
+          <p class="form__hidden"><label>Bitte leer lassen: <input name="bot-field"></label></p>
+
+          <div class="form__row">
+            <label for="a-name">Name</label>
+            <input id="a-name" type="text" name="name" required>
+          </div>
+          <div class="form__row">
+            <label for="a-email">E-Mail</label>
+            <input id="a-email" type="email" name="email" required>
+          </div>
+          <div class="form__row">
+            <label for="a-personen">Anzahl Personen</label>
+            <input id="a-personen" type="number" name="personen" min="1" value="1" required>
+          </div>
+          <div class="form__row">
+            <label for="a-bemerkung">Bemerkung (optional)</label>
+            <textarea id="a-bemerkung" name="bemerkung" rows="3"></textarea>
+          </div>
+          <button type="submit" class="button">Verbindlich anmelden</button>
+        </form>
+      </div>
+      {% endif %}
+    {% else %}
+      <p class="notice">Diese Veranstaltung hat bereits stattgefunden.</p>
+    {% endif %}
+  </div>
+</section>

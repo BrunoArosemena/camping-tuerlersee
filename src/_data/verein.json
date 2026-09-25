@@ -1,0 +1,13 @@
+{
+  "geschichte": "Im Jahr 1974 wollte der Kanton Zürich den damaligen Zeltplatz schliessen, da sich der Campingplatz im Naturschutzgebiet befindet. Um dies zu verhindern, wurde der Verein Camping- und Naturfreunde Türlersee gegründet. Mit Erfolg kämpfte der Verein jahrelang um das Bestehen des Platzes. Mit dem Kauf des Areals durch die Gemeinde Hausen am Albis ist der Kampf ausgestanden und die Betriebskonzession bereitet uns keine Sorgen mehr. Der Verein besteht aber weiterhin.",
+  "zweck": "Unser Ziel ist es, möglichst alle Saison-Camperinnen und Camper in unserem Verein zu haben, um so den Zusammenhalt und die Freundschaft zu pflegen.",
+  "mitgliederAnzahl": 105,
+  "mitgliederStand": "2025",
+  "jahresbeitrag": 40,
+  "vorstand": [
+    { "name": "Thomas Nyffenegger", "rolle": "Präsident" },
+    { "name": "Heinz Wintsch", "rolle": "Vizepräsident" },
+    { "name": "Ernst Nyffenegger", "rolle": "Kasse" },
+    { "name": "Roger Lamm", "rolle": "Aktuar" }
+  ]
+}

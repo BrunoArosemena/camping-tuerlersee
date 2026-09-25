@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: src/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: activities
+    label: "Aktivitäten"
+    folder: "src/activities"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Uhrzeit", name: "time", widget: "string", required: false, hint: "z.B. 09:00 – 11:00" }
+      - { label: "Ort", name: "location", widget: "string", required: false }
+      - { label: "Anmeldung möglich", name: "registration", widget: "boolean", default: true }
+      - { label: "Bild", name: "image", widget: "image", required: false }
+      - { label: "Beschreibung", name: "body", widget: "markdown" }
+
+  - name: verein
+    label: "Vereinsdaten"
+    files:
+      - name: verein
+        label: "Verein-Seite"
+        file: "src/_data/verein.json"
+        fields:
+          - { label: "Geschichte", name: "geschichte", widget: "text" }
+          - { label: "Zweck", name: "zweck", widget: "text" }
+          - { label: "Anzahl Mitglieder", name: "mitgliederAnzahl", widget: "number" }
+          - { label: "Stand (Jahr)", name: "mitgliederStand", widget: "string" }
+          - { label: "Jahresbeitrag (CHF)", name: "jahresbeitrag", widget: "number" }
+          - label: "Vorstand"
+            name: "vorstand"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Rolle", name: "rolle", widget: "string" }
+
+  - name: settings
+    label: "Website"
+    files:
+      - name: site
+        label: "Allgemeine Einstellungen"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Kurztitel", name: "shortTitle", widget: "string" }
+          - { label: "Beschreibung", name: "description", widget: "text" }
+          - { label: "Website-URL", name: "url", widget: "string" }
+          - { label: "Adresse", name: "address", widget: "string" }
+          - { label: "E-Mail", name: "email", widget: "string" }
+          - label: "Navigation"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }

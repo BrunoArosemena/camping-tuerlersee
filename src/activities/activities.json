@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/activity.njk",
+  "tags": ["activities"],
+  "permalink": "/aktivitaeten/{{ title | slugify }}/"
+}

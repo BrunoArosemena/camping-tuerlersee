@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: Mitglied werden
+permalink: /mitglied-werden/
+description: Werde Mitglied beim Camping- und Naturfreunde Türlersee.
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>Mitglied werden</h1>
+    <p>Wir freuen uns, dich/euch bei uns im Verein begrüssen zu dürfen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="card card--form">
+      <form name="mitglied-anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+        <input type="hidden" name="form-name" value="mitglied-anmeldung">
+        <p class="form__hidden"><label>Bitte leer lassen: <input name="bot-field"></label></p>
+
+        <div class="form__grid">
+          <div class="form__row">
+            <label for="m-vorname">Vorname</label>
+            <input id="m-vorname" type="text" name="vorname" required>
+          </div>
+          <div class="form__row">
+            <label for="m-nachname">Nachname</label>
+            <input id="m-nachname" type="text" name="nachname" required>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <label for="m-email">E-Mail</label>
+          <input id="m-email" type="email" name="email" required>
+        </div>
+
+        <div class="form__grid">
+          <div class="form__row">
+            <label for="m-handy">Handy</label>
+            <input id="m-handy" type="tel" name="handy">
+          </div>
+          <div class="form__row">
+            <label for="m-geburtstag">Geburtstag</label>
+            <input id="m-geburtstag" type="date" name="geburtstag">
+          </div>
+        </div>
+
+        <div class="form__row">
+          <label for="m-adresse">Adresse</label>
+          <textarea id="m-adresse" name="adresse" rows="3" required></textarea>
+        </div>
+
+        <p class="form__hint">Der Jahresbeitrag beträgt CHF {{ verein.jahresbeitrag }}.–</p>
+
+        <button type="submit" class="button">Anmeldung senden</button>
+      </form>
+    </div>
+  </div>
+</section>

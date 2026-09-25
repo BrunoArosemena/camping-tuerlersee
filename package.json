@@ -1,0 +1,12 @@
+{
+  "name": "camping-tuerlersee",
+  "version": "1.0.0",
+  "description": "Website des Camping- und Naturfreunde Türlersee",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

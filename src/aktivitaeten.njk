@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: Aktivitäten
+permalink: /aktivitaeten/
+description: Alle bevorstehenden Aktivitäten des Camping- und Naturfreunde Türlersee.
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>Aktivitäten</h1>
+    <p>Alle Aktivitäten rund um den Verein und den Türlersee.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Bevorstehende Veranstaltungen</h2>
+    <ul class="event-list">
+      {% for activity in collections.activities %}
+        {% if activity.data.date | isFuture %}
+        <li class="event-card">
+          <div class="event-card__date">
+            <span class="event-card__day">{{ activity.data.date | dateShort }}</span>
+          </div>
+          <div class="event-card__body">
+            <h3><a href="{{ activity.url }}">{{ activity.data.title }}</a></h3>
+            <p>{{ activity.data.time }} · {{ activity.data.location }}</p>
+          </div>
+          <a class="link-arrow" href="{{ activity.url }}">Details →</a>
+        </li>
+        {% endif %}
+      {% else %}
+        <p>Aktuell sind keine Veranstaltungen geplant.</p>
+      {% endfor %}
+    </ul>
+
+    <h2 class="section-spacer">Vergangene Veranstaltungen</h2>
+    <ul class="event-list event-list--past">
+      {% for activity in collections.activities | reverse %}
+        {% if not (activity.data.date | isFuture) %}
+        <li class="event-card event-card--past">
+          <div class="event-card__date">
+            <span class="event-card__day">{{ activity.data.date | dateShort }}</span>
+          </div>
+          <div class="event-card__body">
+            <h3><a href="{{ activity.url }}">{{ activity.data.title }}</a></h3>
+            <p>{{ activity.data.location }}</p>
+          </div>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+# Weiterleitungen von alten Wix-URLs auf die neue Struktur
+/aktivitaten            /aktivitaeten/           301
+/aktivitaten/*          /aktivitaeten/           301
+/verein                 /verein/                 301

@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+title: Verein
+permalink: /verein/
+description: Geschichte, Zweck und Vorstand des Camping- und Naturfreunde Türlersee.
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>Verein</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>Geschichte</h2>
+    <p>{{ verein.geschichte }}</p>
+
+    <h2>Zweck</h2>
+    <p>{{ verein.zweck }}</p>
+
+    <h2>Vorstand</h2>
+    <ul class="board-list">
+      {% for person in verein.vorstand %}
+      <li><span class="board-list__name">{{ person.name }}</span> — {{ person.rolle }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Mitglieder</h2>
+    <p>Zur Zeit zählen wir {{ verein.mitgliederAnzahl }} aktive Mitglieder. (Stand: {{ verein.mitgliederStand }})</p>
+    <p>Jahresbeitrag: CHF {{ verein.jahresbeitrag }}.–</p>
+
+    <a class="button" href="/mitglied-werden/">Jetzt Mitglied werden</a>
+  </div>
+</section>

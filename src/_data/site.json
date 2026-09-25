@@ -1,0 +1,14 @@
+{
+  "title": "Camping- und Naturfreunde Türlersee",
+  "shortTitle": "Türlersee Camping",
+  "description": "Verein der Camping- und Naturfreunde am Türlersee im Zürcher Säuliamt.",
+  "url": "https://www.campingverein-tuerlersee.ch",
+  "address": "Camping Türlersee, Türlen 1, 8915 Hausen am Albis, Schweiz",
+  "email": "info@campingverein-tuerlersee.ch",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Verein", "href": "/verein/" },
+    { "label": "Aktivitäten", "href": "/aktivitaeten/" },
+    { "label": "Mitglied werden", "href": "/mitglied-werden/" }
+  ]
+}
