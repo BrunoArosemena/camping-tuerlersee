@@ -3,8 +3,9 @@ layout: layouts/base.njk
 title: Home
 description: Camping- und Naturfreunde Türlersee – Campen im schönen Zürcher Säuliamt.
 ---
+{% set heroUrl %}{% imageUrl "src/images/source/hero-turlersee.jpg", 1920 %}{% endset %}
 <section class="hero">
-  <div class="hero__media" aria-hidden="true"></div>
+  <div class="hero__media" aria-hidden="true" style="background-image: url('{{ heroUrl }}');"></div>
   <div class="container hero__content">
     <h1>Camping- und<br>Naturfreunde<br>Türlersee</h1>
     <p class="hero__lead">Campen im schönen Zürcher Säuliamt.</p>
@@ -16,16 +17,25 @@ description: Camping- und Naturfreunde Türlersee – Campen im schönen Zürche
   <div class="container">
     <div class="card-grid">
       <article class="card">
+        <div class="card__media">
+          {% image "src/images/source/teaser-verein.png", "Vereinsleben am Türlersee", "(min-width: 768px) 33vw, 100vw", [400, 700] %}
+        </div>
         <h2>Verein</h2>
         <p>In unserem Verein treffen sich Gleichgesinnte, um sich auszutauschen und die Freundschaft zu pflegen.</p>
         <a class="link-arrow" href="/verein/">Mehr erfahren →</a>
       </article>
       <article class="card">
+        <div class="card__media">
+          {% image "src/images/source/event-seeputzete.jpg", "Aktivitäten am Türlersee", "(min-width: 768px) 33vw, 100vw", [400, 700] %}
+        </div>
         <h2>Aktivitäten</h2>
         <p>Alle Aktivitäten rund um den Verein und den Türlersee findet ihr auf dieser Seite.</p>
         <a class="link-arrow" href="/aktivitaeten/">Mehr erfahren →</a>
       </article>
       <article class="card">
+        <div class="card__media">
+          {% image "src/images/source/teaser-turlersee.jpg", "Der Türlersee", "(min-width: 768px) 33vw, 100vw", [400, 700] %}
+        </div>
         <h2>Mitglied werden</h2>
         <p>Werde Teil der Gemeinschaft am Türlersee – die Anmeldung geht schnell und unkompliziert.</p>
         <a class="link-arrow" href="/mitglied-werden/">Mehr erfahren →</a>

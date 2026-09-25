@@ -14,6 +14,11 @@ layout: layouts/base.njk
 
 <section class="section">
   <div class="container container--narrow">
+    {% if image %}
+    <div class="activity-image">
+      {% image image | toSourcePath, title, "(min-width: 768px) 720px, 100vw", [480, 800, 1200] %}
+    </div>
+    {% endif %}
     <div class="prose">
       {{ content | safe }}
     </div>
